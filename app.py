@@ -2,8 +2,8 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # --- YOUR PAYMENT DETAILS - CHANGE THESE ---
-ECOCASH_NUMBER = "0771234567"  # <--- Put your EcoCash here
-WHATSAPP_NUMBER = "263771234567" # <--- Your WhatsApp
+ECOCASH_NUMBER = "0776051066"  # <--- Put your EcoCash here
+WHATSAPP_NUMBER = "263776051066" # <--- Your WhatsApp
 
 @app.route("/")
 def home():
