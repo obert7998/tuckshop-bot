@@ -1,39 +1,27 @@
-from flask import Flask, request
+from flask import Flask
 app = Flask(__name__)
-RATE = 26.67
 
 @app.route("/")
 def home():
-    c = request.args.get("cost","10")
-    s = request.args.get("sell","15")
-    try:
-        cc=float(c)
-        ss=float(s)
-        p=ss-cc
-        pz=p*RATE
-        pc=p/cc*100 if cc!=0 else 0
-        rec=cc*1.2*RATE
+    return """
+    <body style='margin:0;font-family:Arial;background:#f0fff0'>
+    <div style='background:#009739;color:white;padding:20px;text-align:center'>
+    <h1>🇿🇼 Tuckshop Bot</h1>
+    <div style='background:gold;color:black;padding:8px 20px;border-radius:20px;display:inline-block'>1 USD = 26.67 ZiG</div>
+    </div>
+    <div style='padding:20px;max-width:380px;margin:auto'>
+    <div style='background:white;padding:20px;border-radius:15px;box-shadow:0 4px 15px #ccc;text-align:center'>
+    <h2 style='color:#009739'>Profit Calculator</h2>
+    <p>Cost $10, Sell $15</p>
+    <div style='font-size:28px;color:#009739'><b>Profit $5</b></div>
+    <div style='background:#fff8dc;padding:10px;border-radius:10px;margin-top:15px'>In ZiG: <b>133.35 ZiG</b></div>
+    <br>
+    <a href='/' style='display:block;padding:12px;background:#009739;color:white;border-radius:10px;text-decoration:none'>💰 Open Calculator</a>
+    </div>
+    <p style='text-align:center;color:gray;margin-top:20px'>Made in Harare ❤️ Live!</p>
+    </div>
+    </body>
+    """
 
-        h="<body style='margin:0;font-family:Arial;background:#f0f9f0'>"
-        h+="<div style='background:#009739;color:white;padding:15px;text-align:center'>"
-        h+="<h1>🇿🇼 Tuckshop Bot</h1>"
-        h+="<div style='background:#FFD700;color:black;padding:8px;border-radius:20px;display:inline-block'>"
-        h+=f"1 USD = {RATE} ZiG</div></div>"
-
-        h+="<div style='padding:20px;max-width:400px;margin:auto'>"
-        h+="<div style='background:white;padding:15px;border-radius:15px;box-shadow:0 2px 10px #ccc'>"
-        h+=f"<b>Cost:</b> ${c} | <b>Sell:</b> ${s}<br><br>"
-        h+=f"<div style='font-size:22px;color:#009739'><b>Profit: ${p} ({pz:.2f} ZiG)</b></div>"
-        h+=f"<div>Margin: {pc:.1f}%</div><br>"
-        h+=f"<div style='background:#fff8dc;padding:10px;border-radius:10px'>For 20% profit charge:<br><b>{rec:.2f} ZiG</b></div>"
-
-        h+="<br><form>"
-        h+=f"<input name=cost value={c} placeholder=Cost style='padding:10px;width:45%;border-radius:8px;border:1px solid green'> "
-        h+=f"<input name=sell value={s} placeholder=Sell style='padding:10px;width:45%;border-radius:8px;border:1px solid green'><br><br>"
-        h+="<button style='width:100%;padding:12px;background:#009739;color:white;border:none;border-radius:10px;font-size:16px'>💰 Calculate</button>"
-        h+="</form></div>"
-        h+="<p style='text-align:center;color:gray;margin-top:20px'>Made in Harare ❤️</p>"
-        h+="</div></body>"
-        return h
-    except:
-        return "Error - check numbers"
+if __name__ == "__main__":
+    app.run()
