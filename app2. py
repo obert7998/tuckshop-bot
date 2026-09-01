@@ -1,0 +1,12 @@
+from flask import Flask, request
+app = Flask(__name__)
+RATE = 26.67
+@app.route("/")
+def home():
+    c = request.args.get("cost","10")
+    s = request.args.get("sell","15")
+    try:
+        cc=float(c); ss=float(s); p=ss-cc; pz=p*RATE
+        return f"<body style='font-family:Arial;text-align:center;padding:20px'><h1 style='color:green'>ZIM Tuckshop Bot</h1><div style='background:gold;padding:10px;border-radius:10px'>1 USD = {RATE} ZiG</div><form><input name=cost value={c} placeholder=Cost><input name=sell value={s} placeholder=Sell><button style='background:green;color:white;padding:10px;border-radius:10px'>Calculate</button></form><h2>Profit: ${p} = {pz} ZiG</h2></body>"
+    except:
+        return "Error"
