@@ -25,11 +25,22 @@ def home():
     </form>
     </div>
 
-    <div style='background:white;padding:20px;border-radius:15px;margin-top:20px;box-shadow:0 2px 10px #ccc'>
-    <h3>💰 Make More Money</h3>
-    <a href='/suppliers' style='display:block;padding:12px;background:#009739;color:white;text-align:center;text-decoration:none;border-radius:8px;margin-bottom:10px'>🏪 Find Cheap Suppliers (Save 20%)</a>
-    <a href='/premium' style='display:block;padding:12px;background:gold;color:black;text-align:center;text-decoration:none;border-radius:8px;font-weight:bold'>⭐ Unlock Premium - $5/month</a>
-    </div>
+    <div style='background:#25D366;padding:15px;border-radius:12px;text-align:center;margin-bottom:15px;'>
+<a href='https://wa.me/{WHATSAPP_NUMBER}?text=ADD me to Harare Cheap Stock Group' style='color:white;text-decoration:none;font-weight:bold;font-size:18px;display:block;'>✅ JOIN FREE WHATSAPP GROUP - HARARE CHEAP STOCK</a>
+<p style='color:white;margin:5px 0 0 0;font-size:13px;'>Daily deals - Sugar, Flour, Oil - 0776051066</p>
+</div>
+
+<div style='background:white;padding:20px;border-radius:15px;'>
+<h3>💰 Make More Money</h3>
+<a href='/suppliers' style='display:block;padding:12px;background:#f0f0f0;border-radius:8px;margin-bottom:10px;text-decoration:none;color:black;'>🔍 Find Cheap Suppliers (Save 20%)</a>
+<a href='/premium' style='display:block;padding:12px;background:gold;border-radius:8px;text-decoration:none;color:black;font-weight:bold;'>⭐ Unlock Premium - $5/month</a>
+</div>
+
+<div style='background:gold;padding:15px;border-radius:12px;text-align:center;margin-top:15px;border:2px solid #009739;'>
+<h3 style='margin:0;color:#000;'>📢 WHOLESALER? ADVERTISE FOR $10!</h3>
+<p style='margin:5px 0;'>Get 100+ tuckshop owners daily!</p>
+<a href='https://wa.me/{WHATSAPP_NUMBER}?text=I want to advertise my wholesale for $10 per month EcoCash USD 0776051066' style='display:block;background:#009739;color:white;padding:12px;border-radius:8px;text-decoration:none;font-weight:bold;'>ADVERTISE NOW - $10 - EcoCash {ECOCASH_NUMBER}</a>
+</div>
 
     <p style='text-align:center;color:gray;margin-top:20px'>Made in Harare ❤️ | <a href='/suppliers'>Advertise Your Wholesale Here</a></p>
     </div>
