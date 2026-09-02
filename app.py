@@ -7,7 +7,7 @@ WHATSAPP_NUMBER = "263776051066" # <--- Your WhatsApp
 
 @app.route("/")
 def home():
-    return """
+    return f"""
     <body style='margin:0;font-family:Arial;background:#f0fff0'>
     <div style='background:#009739;color:white;padding:20px;text-align:center'>
     <h1>🇿🇼 Tuckshop Bot</h1>
