@@ -41,8 +41,7 @@ def home():
 <p style='margin:5px 0;'>Get 100+ tuckshop owners daily!</p>
 <a href='https://wa.me/{WHATSAPP_NUMBER}?text=I want to advertise my wholesale for $10 per month EcoCash USD 0776051066' style='display:block;background:#009739;color:white;padding:12px;border-radius:8px;text-decoration:none;font-weight:bold;'>ADVERTISE NOW - $10 - EcoCash {ECOCASH_NUMBER}</a>
 </div>
-
-    <p style='text-align:center;color:gray;margin-top:20px'>Made in Harare ❤️ | <a href='/suppliers'>Advertise Your Wholesale Here</a></p>
+<p style='text-align:center;color:gray;margin-top:20px'>Made in Harare ❤️ | WhatsApp: 0776051066 - EcoCash USD 0776051066</p>
     </div>
     </body>
     """
