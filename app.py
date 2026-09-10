@@ -1,5 +1,5 @@
 from flask import Flask
-import requests, re
+import requests, re, os
 from datetime import datetime
 app = Flask(__name__)
 
@@ -14,9 +14,7 @@ def get_rbz_rate():
     except: pass
     return default_rate
 
-# YOUR LINKS - NO PHONE NUMBER VISIBLE
-GROUP_LINK = "https://chat.whatsapp.com/GPbgL4kcTyFLHoNuvdEkI9?s=cl&p=a&mlu=0&ilr=4"
-ADVERTISE_LINK = "https://chat.whatsapp.com/GPbgL4kcTyFLHoNuvdEkI9?s=cl&p=a&mlu=0&ilr=4"  # Change this to your wa.me/message/... when you get it
+GROUP_LINK = "https://chat.whatsapp.com/GPbgL4kcTyFLHoNuvdEkI9"
 
 @app.route("/")
 def home():
@@ -26,13 +24,11 @@ def home():
     <script>const RATE={rate};function calc(){{let c=parseFloat(document.getElementById('c').value)||0;let s=parseFloat(document.getElementById('s').value)||0;let p=s-c;let perc=c>0?((p/c)*100).toFixed(1):0;document.getElementById('p').innerHTML='Profit $'+p.toFixed(2)+' ('+perc+'%)';document.getElementById('zig').innerHTML='ZiG Profit: '+(p*RATE).toFixed(2)+' ZiG';}}function usdToZig(){{let u=document.getElementById('u').value||0;document.getElementById('zout').innerHTML=(u*RATE).toFixed(2)+' ZiG';}}window.onload=calc;</script>
     </head><body><div class='top'>Tuckshop Bot PRO<br><span style='background:gold;color:black;padding:5px 15px;border-radius:20px;font-size:14px'>1 USD = {rate} ZiG - RBZ {today}</span></div>
     <div class='card'><h2 style='margin:0;color:#009739'>Profit Calculator</h2>Cost $<input id='c' type='number' value='10' oninput='calc()'>Sell $<input id='s' type='number' value='15' oninput='calc()'><button onclick='calc()'>CALCULATE</button><div id='p' class='profit'></div><div id='zig' style='text-align:center;background:gold;padding:10px;border-radius:10px;font-weight:bold'></div></div>
-    <div class='card' style='background:#fff8e1;border:2px solid gold'><h3 style='margin:0'>USD to ZiG Converter</h3>USD $<input id='u' type='number' value='1' oninput='usdToZig()'><button onclick='usdToZig()' style='background:gold;color:black'>CONVERT</button><div id='zout' class='profit'>{rate} ZiG</div></div>
+    <div class='card' style='background:#fff8e1;border:2px solid gold'><h3 style='margin:0'>USD to ZiG</h3>USD $<input id='u' type='number' value='1' oninput='usdToZig()'><button onclick='usdToZig()' style='background:gold;color:black'>CONVERT</button><div id='zout' class='profit'>{rate} ZiG</div></div>
     <a class='btn' style='background:#25D366;color:white' href='{GROUP_LINK}'>JOIN FREE WHATSAPP GROUP<br>Daily Cheap Stock</a>
-    <div class='card' style='background:gold;border:3px solid black;text-align:center'><h2 style='margin:0'>WHOLESALER? ADVERTISE $10!</h2><p>100+ owners see you DAILY!</p><a class='btn' style='background:#009739;color:white' href='{ADVERTISE_LINK}'>ADVERTISE NOW<br>Chat on WhatsApp Only</a></div>
-    <p style='text-align:center;color:gray;padding:15px'>Made in Harare - Tuckshop Bot<br>RBZ Official: {rate} ZiG</p></body></html>"""
+    <div class='card' style='background:gold;border:3px solid black;text-align:center'><h2 style='margin:0'>WHOLESALER? ADVERTISE $10!</h2><p>100+ owners see you DAILY!</p><a class='btn' style='background:#009739;color:white' href='{GROUP_LINK}'>ADVERTISE NOW<br>Chat on WhatsApp Only</a></div>
+    <p style='text-align:center;color:gray;padding:15px'>Made in Harare - Tuckshop Bot<br>RBZ Official: {rate}</p></body></html>"""
 
-@app.route("/rate")
-def rate_api():
-    return {"rbz_rate": get_rbz_rate(), "date": datetime.now().isoformat()}
-
-if __name__=="__main__": app.run()
+if __name__=="__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
